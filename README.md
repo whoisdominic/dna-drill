@@ -7,7 +7,7 @@
 
   
 
-1. Strings
+1. Sets
 
 2. Arrays
 
