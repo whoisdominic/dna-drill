@@ -2,52 +2,52 @@
 
 // Returns the sum of two numbers
 function add(a, b) {
-  // Implementation goes here
+  return
 }
 
 // Returns the difference of two numbers
 function subtract(a, b) {
-  // Implementation goes here
+  return
 }
 
 // Returns the product of two numbers
 function multiply(a, b) {
-  // Implementation goes here
+  return
 }
 
 // Returns the quotient of two numbers
 function divide(a, b) {
-  // Implementation goes here
+  return
 }
 
 // Returns the remainder of a division
 function modulus(a, b) {
-  // Implementation goes here
+  return
 }
 
 // Returns the result of a raised to the power of b
 function exponent(a, b) {
-  // Implementation goes here
+  return
 }
 
 // Returns the floor division of two numbers
 function floor_division(a, b) {
-  // Implementation goes here
+  return
 }
 
 // Returns the absolute value of a number
 function absolute(a) {
-  // Implementation goes here
+  return
 }
 
 // Returns a rounded number
 function round_number(a, b) {
-  // Implementation goes here
+  return
 }
 
 // Returns the square root of a number
 function square_root(a) {
-  // Implementation goes here
+  return
 }
 
 module.exports = {
@@ -61,4 +61,4 @@ module.exports = {
   absolute,
   round_number,
   square_root,
-};
+}
