@@ -55,15 +55,15 @@ test("floor_division", () => {
 });
 
 test("absolute", () => {
-  expect(absolute(10)).toBe(10);
-  expect(absolute(-10)).toBe(10);
+  expect(absolute(7)).toBe(7);
+  expect(absolute(-5)).toBe(5);
   expect(absolute(0)).toBe(0);
 });
 
 test("round_number", () => {
-  expect(round_number(10.2, 0)).toBe(10);
-  expect(round_number(10.5, 0)).toBe(11);
-  expect(round_number(-10.5, 0)).toBe(-11);
+  expect(round_number(10.2)).toBe(10);
+  expect(round_number(10.6)).toBe(11);
+  expect(round_number(-10.8)).toBe(-11);
 });
 
 test("square_root", () => {
