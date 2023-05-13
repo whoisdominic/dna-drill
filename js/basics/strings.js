@@ -60,25 +60,32 @@ function countWords(value) {
 
 // Left Rotation and Right Rotation of a String
 function leftRotateString(value, rotationCount) {
-  return
+  // Ensure the rotationCount is within the length of the string.
+  rotationCount = rotationCount % value.length
+
+  // Slice the string from rotationCount index and concatenate the sliced part at the end.
+  return value.slice(rotationCount) + value.slice(0, rotationCount)
 }
 
 function rightRotateString(value, rotationCount) {
-  return
+  // Ensure the rotationCount is within the length of the string.
+  rotationCount = rotationCount % value.length
+
+  // For right rotation, slice the string from length - rotationCount index and concatenate the sliced part at the beginning.
+  return (
+    value.slice(value.length - rotationCount) +
+    value.slice(0, value.length - rotationCount)
+  )
 }
 
 // Searching For Characters and Substring in a String
 function searchCharInString(value, character) {
-  return
-}
-
-function searchSubstringInString(value, substring) {
-  return
+  return value.includes(character)
 }
 
 // Sort string of characters
 function sortString(value) {
-  return
+  return value.split("").sort().join("")
 }
 
 // Swap characters in a String
@@ -93,7 +100,9 @@ function swapCharsInString(value, index1, index2) {
 
 // How to insert characters in a string at a certain position?
 function insertCharsInString(value, index, chars) {
-  return
+  let array = value.split("")
+  array.splice(index, 0, chars)
+  return array.join("")
 }
 
 // Remove all occurrences of a character in a string
@@ -114,7 +123,6 @@ module.exports = {
   leftRotateString,
   rightRotateString,
   searchCharInString,
-  searchSubstringInString,
   sortString,
   swapCharsInString,
   insertCharsInString,

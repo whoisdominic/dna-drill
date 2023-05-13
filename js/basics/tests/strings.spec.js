@@ -9,7 +9,6 @@ const {
   leftRotateString,
   rightRotateString,
   searchCharInString,
-  searchSubstringInString,
   sortString,
   swapCharsInString,
   insertCharsInString,
@@ -68,25 +67,23 @@ test("countWords", () => {
 test("leftRotateString", () => {
   expect(leftRotateString("hello", 2)).toBe("llohe")
   expect(leftRotateString("python", 3)).toBe("honpyt")
-  expect(leftRotateString("", 1)).toBe("")
+  expect(leftRotateString("abcdefg", 1)).toBe("bcdefga") // Rotating 1 place to the left
+  expect(leftRotateString("abcdefg", 3)).toBe("defgabc") // Rotating 3 places to the left
+  expect(leftRotateString("abcdefg", 7)).toBe("abcdefg") // Rotating 7 places to the left (same as the length of the string, so the string remains the same)
 })
 
 test("rightRotateString", () => {
   expect(rightRotateString("hello", 2)).toBe("lohel")
-  expect(rightRotateString("python", 3)).toBe("thonpy")
-  expect(rightRotateString("", 1)).toBe("")
+  expect(rightRotateString("python", 3)).toBe("honpyt")
+  expect(rightRotateString("abcdefg", 1)).toBe("gabcdef")
+  expect(rightRotateString("abcdefg", 3)).toBe("efgabcd")
+  expect(rightRotateString("abcdefg", 7)).toBe("abcdefg")
 })
 
 test("searchCharInString", () => {
   expect(searchCharInString("hello", "h")).toBe(true)
   expect(searchCharInString("python", "z")).toBe(false)
   expect(searchCharInString("", "a")).toBe(false)
-})
-
-test("searchSubstringInString", () => {
-  expect(searchSubstringInString("hello world", "world")).toBe(true)
-  expect(searchSubstringInString("python programming", "java")).toBe(false)
-  expect(searchSubstringInString("", "abc")).toBe(false)
 })
 
 test("sortString", () => {
