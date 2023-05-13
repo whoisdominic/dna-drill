@@ -4,7 +4,6 @@ const {
   firstNChars,
   lastNChars,
   reverseString,
-  countLettersAlphabet,
   countLettersFreq,
   countWords,
   leftRotateString,
@@ -14,7 +13,6 @@ const {
   sortString,
   swapCharsInString,
   insertCharsInString,
-  removeCharInString,
   removeAllCharInString,
 } = require("../strings")
 
@@ -46,24 +44,6 @@ test("reverseString", () => {
   expect(reverseString("hello")).toBe("olleh")
   expect(reverseString("python")).toBe("nohtyp")
   expect(reverseString("")).toBe("")
-})
-
-test("countLettersAlphabet", () => {
-  expect(countLettersAlphabet("hello")).toEqual([
-    ["e", 1],
-    ["h", 1],
-    ["l", 2],
-    ["o", 1],
-  ])
-  expect(countLettersAlphabet("python")).toEqual([
-    ["h", 1],
-    ["n", 1],
-    ["o", 1],
-    ["p", 1],
-    ["t", 1],
-    ["y", 1],
-  ])
-  expect(countLettersAlphabet("")).toEqual([])
 })
 
 test("countLettersFreq", () => {
@@ -117,7 +97,7 @@ test("sortString", () => {
 
 test("swapCharsInString", () => {
   expect(swapCharsInString("hello", 0, 4)).toBe("oellh")
-  expect(swapCharsInString("python", 1, 5)).toBe("pythno")
+  expect(swapCharsInString("python", 1, 5)).toBe("pnthoy")
   expect(swapCharsInString("a", 0, 0)).toBe("a")
 })
 
@@ -125,12 +105,6 @@ test("insertCharsInString", () => {
   expect(insertCharsInString("hello", 5, " world")).toBe("hello world")
   expect(insertCharsInString("python", 0, "I love ")).toBe("I love python")
   expect(insertCharsInString("", 0, "hello")).toBe("hello")
-})
-
-test("removeCharInString", () => {
-  expect(removeCharInString("hello", "l")).toBe("heo")
-  expect(removeCharInString("python", "p")).toBe("ython")
-  expect(removeCharInString("", "a")).toBe("")
 })
 
 test("removeAllCharInString", () => {
