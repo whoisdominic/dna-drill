@@ -39,7 +39,6 @@ function countLettersFreq(value) {
   const letters = {}
   for (let i = 0; i < value.length; i++) {
     let letter = value[i]
-    console.log(letter)
     if (letter in letters) {
       letters[letter] += 1
     } else {
