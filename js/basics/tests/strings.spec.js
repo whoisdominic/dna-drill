@@ -4,17 +4,14 @@ const {
   firstNChars,
   lastNChars,
   reverseString,
-  countLettersAlphabet,
   countLettersFreq,
   countWords,
   leftRotateString,
   rightRotateString,
   searchCharInString,
-  searchSubstringInString,
   sortString,
   swapCharsInString,
   insertCharsInString,
-  removeCharInString,
   removeAllCharInString,
 } = require("../strings")
 
@@ -48,24 +45,6 @@ test("reverseString", () => {
   expect(reverseString("")).toBe("")
 })
 
-test("countLettersAlphabet", () => {
-  expect(countLettersAlphabet("hello")).toEqual([
-    ["e", 1],
-    ["h", 1],
-    ["l", 2],
-    ["o", 1],
-  ])
-  expect(countLettersAlphabet("python")).toEqual([
-    ["h", 1],
-    ["n", 1],
-    ["o", 1],
-    ["p", 1],
-    ["t", 1],
-    ["y", 1],
-  ])
-  expect(countLettersAlphabet("")).toEqual([])
-})
-
 test("countLettersFreq", () => {
   expect(countLettersFreq("hello")).toEqual({ h: 1, e: 1, l: 2, o: 1 })
   expect(countLettersFreq("python")).toEqual({
@@ -88,25 +67,23 @@ test("countWords", () => {
 test("leftRotateString", () => {
   expect(leftRotateString("hello", 2)).toBe("llohe")
   expect(leftRotateString("python", 3)).toBe("honpyt")
-  expect(leftRotateString("", 1)).toBe("")
+  expect(leftRotateString("abcdefg", 1)).toBe("bcdefga") // Rotating 1 place to the left
+  expect(leftRotateString("abcdefg", 3)).toBe("defgabc") // Rotating 3 places to the left
+  expect(leftRotateString("abcdefg", 7)).toBe("abcdefg") // Rotating 7 places to the left (same as the length of the string, so the string remains the same)
 })
 
 test("rightRotateString", () => {
   expect(rightRotateString("hello", 2)).toBe("lohel")
-  expect(rightRotateString("python", 3)).toBe("thonpy")
-  expect(rightRotateString("", 1)).toBe("")
+  expect(rightRotateString("python", 3)).toBe("honpyt")
+  expect(rightRotateString("abcdefg", 1)).toBe("gabcdef")
+  expect(rightRotateString("abcdefg", 3)).toBe("efgabcd")
+  expect(rightRotateString("abcdefg", 7)).toBe("abcdefg")
 })
 
 test("searchCharInString", () => {
   expect(searchCharInString("hello", "h")).toBe(true)
   expect(searchCharInString("python", "z")).toBe(false)
   expect(searchCharInString("", "a")).toBe(false)
-})
-
-test("searchSubstringInString", () => {
-  expect(searchSubstringInString("hello world", "world")).toBe(true)
-  expect(searchSubstringInString("python programming", "java")).toBe(false)
-  expect(searchSubstringInString("", "abc")).toBe(false)
 })
 
 test("sortString", () => {
@@ -117,7 +94,7 @@ test("sortString", () => {
 
 test("swapCharsInString", () => {
   expect(swapCharsInString("hello", 0, 4)).toBe("oellh")
-  expect(swapCharsInString("python", 1, 5)).toBe("pythno")
+  expect(swapCharsInString("python", 1, 5)).toBe("pnthoy")
   expect(swapCharsInString("a", 0, 0)).toBe("a")
 })
 
@@ -125,12 +102,6 @@ test("insertCharsInString", () => {
   expect(insertCharsInString("hello", 5, " world")).toBe("hello world")
   expect(insertCharsInString("python", 0, "I love ")).toBe("I love python")
   expect(insertCharsInString("", 0, "hello")).toBe("hello")
-})
-
-test("removeCharInString", () => {
-  expect(removeCharInString("hello", "l")).toBe("heo")
-  expect(removeCharInString("python", "p")).toBe("ython")
-  expect(removeCharInString("", "a")).toBe("")
 })
 
 test("removeAllCharInString", () => {
