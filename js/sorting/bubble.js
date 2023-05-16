@@ -1,16 +1,24 @@
-function bubbleSort(arr) {
-  const length = arr.length
+function bubbleSort(inputArr) {
+  let inputLength = inputArr.length
 
-  for (let i = 0; i < length - 1; i++) {
-    for (let j = 0; j < length - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        // Swap elements
-        ;[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+  for (let i = 0; i < inputLength; i++) {
+    let swapped = false
+    for (let j = 0; j < inputLength - i - 1; j++) {
+      if (inputArr[j] > inputArr[j + 1]) {
+        let temp = inputArr[j]
+        inputArr[j] = inputArr[j + 1]
+        inputArr[j + 1] = temp
+        swapped = true
       }
+    }
+
+    // If no two elements were swapped inside inner for loop, then break outer loop
+    if (!swapped) {
+      break
     }
   }
 
-  return arr
+  return inputArr
 }
 
 module.exports = bubbleSort

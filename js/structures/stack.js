@@ -10,7 +10,7 @@ class Stack {
 
   // Pops the top element from the stack
   pop() {
-    if (this.isEmpty()) {
+    if (this.isEmpty) {
       return "Stack is empty"
     }
     return this.items.pop()
@@ -18,29 +18,20 @@ class Stack {
 
   // Returns the top element of the stack without removing it
   peek() {
-    if (this.isEmpty()) {
+    if (this.isEmpty) {
       return "No elements in the stack"
     }
     return this.items[this.items.length - 1]
   }
 
   // Checks if the stack is empty
-  isEmpty() {
+  get isEmpty() {
     return this.items.length === 0
   }
 
   // Returns the size of the stack
-  size() {
+  get size() {
     return this.items.length
-  }
-
-  // Prints the elements of the stack
-  printStack() {
-    let str = ""
-    for (let i = 0; i < this.items.length; i++) {
-      str += this.items[i] + " "
-    }
-    return str
   }
 }
 
